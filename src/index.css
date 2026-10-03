@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #FFF9E6;
+  --color-gold-100: #FFF0BF;
+  --color-gold-200: #FFE699;
+  --color-gold-300: #FFDA6B;
+  --color-gold-400: #F0B429;
+  --color-gold-500: #D99E1E;
+  --color-gold-600: #B88415;
+  --color-gold-700: #8C640F;
+  --color-gold-800: #61450A;
+  --color-gold-900: #3D2B06;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #f8f9fa;
+  }
+
+  input, select, textarea {
+    outline: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 2px rgba(240, 180, 41, 0.3);
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; }
+}
