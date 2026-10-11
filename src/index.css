@@ -1,16 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold-50: #FFF9E6;
-  --color-gold-100: #FFF0BF;
-  --color-gold-200: #FFE699;
-  --color-gold-300: #FFDA6B;
-  --color-gold-400: #F0B429;
-  --color-gold-500: #D99E1E;
-  --color-gold-600: #B88415;
-  --color-gold-700: #8C640F;
-  --color-gold-800: #61450A;
-  --color-gold-900: #3D2B06;
+  --color-da-primary: #0D9488;
+  --color-da-primary-hover: #0F766E;
+  --color-da-surface: #F8FFFE;
+}
+
+:root {
+  --da-primary: #0D9488;
+  --da-primary-hover: #0F766E;
+  --da-bg: #FFFFFF;
+  --da-surface: #F8FFFE;
+  --da-text: #1E293B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --da-primary: #14B8A6;
+    --da-primary-hover: #0D9488;
+    --da-bg: #0F172A;
+    --da-surface: #1E293B;
+    --da-text: #F1F5F9;
+  }
 }
 
 @layer base {
@@ -20,12 +31,19 @@
     background-color: #f8f9fa;
   }
 
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #0F172A;
+      color: #F1F5F9;
+    }
+  }
+
   input, select, textarea {
     outline: none;
   }
 
   input:focus, select:focus, textarea:focus {
-    box-shadow: 0 0 0 2px rgba(240, 180, 41, 0.3);
+    box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.3);
   }
 }
 

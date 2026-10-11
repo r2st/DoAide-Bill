@@ -4,18 +4,18 @@ import { INDIAN_STATES, GST_RATES, CURRENCIES, DOCUMENT_TYPES, DEFAULT_LINE_ITEM
 function Section({ title, children, defaultOpen = true }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden">
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
       >
-        <span className="font-semibold text-gray-800 text-sm">{title}</span>
+        <span className="font-semibold text-gray-800 dark:text-slate-200 text-sm">{title}</span>
         <svg className={`w-4 h-4 text-gray-400 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      {open && <div className="px-4 pb-4 border-t border-gray-100">{children}</div>}
+      {open && <div className="px-4 pb-4 border-t border-gray-100 dark:border-slate-700">{children}</div>}
     </div>
   );
 }
@@ -23,14 +23,14 @@ function Section({ title, children, defaultOpen = true }) {
 function Field({ label, children }) {
   return (
     <div>
-      <label className="block text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">{label}</label>
+      <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 uppercase tracking-wide mb-1">{label}</label>
       {children}
     </div>
   );
 }
 
-const inputCls = 'w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400';
-const selectCls = 'w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 bg-white';
+const inputCls = 'w-full border border-gray-300 dark:border-slate-600 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500 bg-white dark:bg-slate-700';
+const selectCls = 'w-full border border-gray-300 dark:border-slate-600 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-slate-100 bg-white dark:bg-slate-700';
 
 export default function InvoiceForm({ invoice, onChange }) {
   const sigCanvasRef = useRef(null);
@@ -173,7 +173,7 @@ export default function InvoiceForm({ invoice, onChange }) {
           </div>
           <Field label="Logo">
             <div className="flex items-center gap-3">
-              <input type="file" accept="image/*" onChange={handleLogoUpload} className="text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-gold-50 file:text-gold-700 hover:file:bg-gold-100" />
+              <input type="file" accept="image/*" onChange={handleLogoUpload} className="text-sm text-gray-500 dark:text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-teal-50 file:text-teal-800 hover:file:bg-teal-100 dark:file:bg-teal-900/30 dark:file:text-teal-400" />
               {invoice.businessLogo && (
                 <button onClick={() => updateField('businessLogo', null)} className="text-xs text-red-500 hover:text-red-700">Remove</button>
               )}
@@ -213,7 +213,7 @@ export default function InvoiceForm({ invoice, onChange }) {
       <Section title="Line Items">
         <div className="space-y-3 pt-3">
           {invoice.items.map((item, i) => (
-            <div key={i} className="bg-gray-50 rounded-lg p-3 border border-gray-100">
+            <div key={i} className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 border border-gray-100 dark:border-slate-700">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-bold text-gray-400">Item {i + 1}</span>
                 {invoice.items.length > 1 && (
@@ -244,7 +244,7 @@ export default function InvoiceForm({ invoice, onChange }) {
           ))}
           <button
             onClick={addItem}
-            className="w-full py-2 border-2 border-dashed border-gray-300 rounded-lg text-sm font-medium text-gray-500 hover:border-gold-400 hover:text-gold-600 transition-colors"
+            className="w-full py-2 border-2 border-dashed border-gray-300 dark:border-slate-600 rounded-lg text-sm font-medium text-gray-500 dark:text-slate-400 hover:border-teal-600 hover:text-teal-700 dark:hover:border-teal-500 dark:hover:text-teal-400 transition-colors"
           >
             + Add Item
           </button>
@@ -284,20 +284,20 @@ export default function InvoiceForm({ invoice, onChange }) {
           <div className="flex gap-2 mb-3">
             <label className="flex-1">
               <input type="file" accept="image/*" onChange={handleSignatureUpload} className="hidden" />
-              <span className="block text-center py-2 border border-gray-300 rounded-lg text-sm text-gray-600 cursor-pointer hover:bg-gray-50">
+              <span className="block text-center py-2 border border-gray-300 dark:border-slate-600 rounded-lg text-sm text-gray-600 dark:text-slate-300 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700">
                 Upload Signature
               </span>
             </label>
-            <button onClick={clearSignature} className="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-600 hover:bg-gray-50">
+            <button onClick={clearSignature} className="px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg text-sm text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700">
               Clear
             </button>
           </div>
-          <p className="text-xs text-gray-400 mb-2">Or draw below:</p>
+          <p className="text-xs text-gray-400 dark:text-slate-500 mb-2">Or draw below:</p>
           <canvas
             ref={sigCanvasRef}
             width={360}
             height={120}
-            className="w-full border border-gray-300 rounded-lg cursor-crosshair bg-white"
+            className="w-full border border-gray-300 dark:border-slate-600 rounded-lg cursor-crosshair bg-white dark:bg-slate-700"
             style={{ touchAction: 'none' }}
             onMouseDown={startDraw}
             onMouseMove={draw}

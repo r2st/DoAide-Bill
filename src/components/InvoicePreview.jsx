@@ -7,16 +7,16 @@ const TEMPLATE_STYLES = {
     tableHeaderBg: '#EFF6FF', tableHeaderText: '#1E40AF', borderColor: '#BFDBFE',
   },
   modern: {
-    headerBg: 'linear-gradient(135deg, #1F2937, #F0B429)', headerText: '#FFFFFF', accentColor: '#F0B429',
-    tableHeaderBg: '#FFF9E6', tableHeaderText: '#92400E', borderColor: '#FDE68A',
+    headerBg: 'linear-gradient(135deg, #1F2937, #0D9488)', headerText: '#FFFFFF', accentColor: '#0D9488',
+    tableHeaderBg: '#F0FDFA', tableHeaderText: '#115E59', borderColor: '#99F6E4',
   },
   minimal: {
     headerBg: '#FFFFFF', headerText: '#1F2937', accentColor: '#1F2937',
     tableHeaderBg: '#F9FAFB', tableHeaderText: '#374151', borderColor: '#E5E7EB',
   },
   classic: {
-    headerBg: '#FFFBEB', headerText: '#78350F', accentColor: '#92400E',
-    tableHeaderBg: '#FEF3C7', tableHeaderText: '#78350F', borderColor: '#D97706',
+    headerBg: '#F0FDFA', headerText: '#134E4A', accentColor: '#115E59',
+    tableHeaderBg: '#CCFBF1', tableHeaderText: '#134E4A', borderColor: '#0D9488',
   },
   bold: {
     headerBg: '#1F2937', headerText: '#FFFFFF', accentColor: '#DC2626',
@@ -27,8 +27,8 @@ const TEMPLATE_STYLES = {
     tableHeaderBg: '#EDE9FE', tableHeaderText: '#6D28D9', borderColor: '#C4B5FD',
   },
   colorful: {
-    headerBg: 'linear-gradient(135deg, #F0B429, #F59E0B)', headerText: '#FFFFFF', accentColor: '#F59E0B',
-    tableHeaderBg: '#FFFBEB', tableHeaderText: '#92400E', borderColor: '#FCD34D',
+    headerBg: 'linear-gradient(135deg, #0D9488, #14B8A6)', headerText: '#FFFFFF', accentColor: '#14B8A6',
+    tableHeaderBg: '#F0FDFA', tableHeaderText: '#115E59', borderColor: '#5EEAD4',
   },
   corporate: {
     headerBg: '#1E3A5F', headerText: '#FFFFFF', accentColor: '#1E3A5F',

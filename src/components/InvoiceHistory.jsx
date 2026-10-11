@@ -30,36 +30,36 @@ export default function InvoiceHistory({ onLoad, onClose }) {
         <div className="flex items-center gap-3">
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
           >
             <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           </button>
-          <h2 className="text-xl font-bold text-gray-900">Invoice History</h2>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-slate-100">Invoice History</h2>
         </div>
-        <span className="text-sm text-gray-500">{invoices.length} saved</span>
+        <span className="text-sm text-gray-500 dark:text-slate-400">{invoices.length} saved</span>
       </div>
 
       {invoices.length === 0 ? (
-        <div className="text-center py-16 bg-white rounded-xl border border-gray-200">
+        <div className="text-center py-16 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700">
           <svg className="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-          <p className="text-gray-500 font-medium">No saved invoices yet</p>
-          <p className="text-sm text-gray-400 mt-1">Your saved invoices will appear here</p>
+          <p className="text-gray-500 dark:text-slate-400 font-medium">No saved invoices yet</p>
+          <p className="text-sm text-gray-400 dark:text-slate-500 mt-1">Your saved invoices will appear here</p>
         </div>
       ) : (
         <div className="space-y-3">
           {invoices.map(inv => (
-            <div key={inv.id} className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md transition-shadow">
+            <div key={inv.id} className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-medium px-2 py-0.5 bg-gold-50 text-gold-700 rounded-full">
+                    <span className="text-xs font-medium px-2 py-0.5 bg-teal-50 dark:bg-teal-900/30 text-teal-800 dark:text-teal-400 rounded-full">
                       {getDocLabel(inv.documentType)}
                     </span>
                     {inv.invoiceNumber && (
                       <span className="text-sm font-mono text-gray-600">#{inv.invoiceNumber}</span>
                     )}
                   </div>
-                  <p className="font-medium text-gray-900 truncate">{inv.clientName || 'No client name'}</p>
+                  <p className="font-medium text-gray-900 dark:text-slate-100 truncate">{inv.clientName || 'No client name'}</p>
                   <div className="flex items-center gap-3 mt-1 text-xs text-gray-500">
                     {inv.invoiceDate && <span>{inv.invoiceDate}</span>}
                     {inv.grandTotal != null && (
@@ -72,7 +72,7 @@ export default function InvoiceHistory({ onLoad, onClose }) {
                 <div className="flex items-center gap-2 ml-3">
                   <button
                     onClick={() => onLoad(inv)}
-                    className="px-3 py-1.5 text-sm font-medium text-white bg-gold-400 hover:bg-gold-500 rounded-lg transition-colors"
+                    className="px-3 py-1.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors"
                   >
                     Load
                   </button>

@@ -62,7 +62,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950">
       <Header
         onNewInvoice={handleNewInvoice}
         onShowHistory={() => setShowHistory(true)}
@@ -81,13 +81,13 @@ export default function App() {
               onSelect={(template) => updateInvoice({ template })}
             />
 
-            <div className="flex gap-2 mb-6 bg-white rounded-lg p-1 shadow-sm border border-gray-200 max-w-xs mx-auto sm:hidden">
+            <div className="flex gap-2 mb-6 bg-white dark:bg-slate-800 rounded-lg p-1 shadow-sm border border-gray-200 dark:border-slate-700 max-w-xs mx-auto sm:hidden">
               <button
                 onClick={() => setActiveTab('form')}
                 className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
                   activeTab === 'form'
-                    ? 'bg-gold-400 text-white'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-teal-600 text-white'
+                    : 'text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
                 Edit
@@ -96,8 +96,8 @@ export default function App() {
                 onClick={() => setActiveTab('preview')}
                 className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
                   activeTab === 'preview'
-                    ? 'bg-gold-400 text-white'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-teal-600 text-white'
+                    : 'text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
                 Preview
@@ -115,7 +115,7 @@ export default function App() {
                     <button
                       onClick={handleDownloadPDF}
                       disabled={generating}
-                      className="flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
+                      className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
                     >
                       {generating ? (
                         <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -126,7 +126,7 @@ export default function App() {
                     </button>
                     <button
                       onClick={handleSave}
-                      className="flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors"
+                      className="flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-200 px-4 py-2 rounded-lg font-medium transition-colors"
                     >
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" /></svg>
                       Save
@@ -140,7 +140,7 @@ export default function App() {
                     </button>
                   </div>
 
-                  <div className="bg-white rounded-lg shadow-lg overflow-auto max-h-[80vh]">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-auto max-h-[80vh]">
                     <InvoicePreview invoice={invoice} totals={totals} />
                   </div>
                 </div>
