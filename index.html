@@ -6,32 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Non-blocking: system fonts render first, Inter swaps in when loaded. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
     <title>DoAide Bill — Free Invoice Generator for Indian Businesses</title>
     <meta name="description" content="Free GST-compliant invoice and bill generator for Indian freelancers and small businesses. No signup required. Generate professional invoices with CGST/SGST/IGST calculations instantly." />
     <meta name="keywords" content="invoice generator, bill generator, GST invoice, Indian freelancer, small business, free invoice, CGST, SGST, IGST" />
     <meta property="og:title" content="DoAide Bill — Free Invoice Generator" />
     <meta property="og:description" content="Create professional GST-compliant invoices instantly. No signup required." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bill.doaide.com" />
-    <link rel="canonical" href="https://bill.doaide.com" />
+    <meta property="og:url" content="https://bill.doaide.com/" />
+    <meta property="og:site_name" content="DoAide Bill" />
+    <meta property="og:image" content="https://bill.doaide.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <link rel="canonical" href="https://bill.doaide.com/" />
     <script defer src="https://analytics.doaide.com/script.js" data-website-id="45174e73-6745-406f-89eb-85fb1ad437f3"></script>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DoAide Bill — Free Invoice Generator" />
     <meta name="twitter:description" content="Create professional GST-compliant invoices instantly. No signup required." />
+    <meta name="twitter:image" content="https://bill.doaide.com/og-image.png" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "DoAide Bill",
-      "url": "https://bill.doaide.com",
+      "url": "https://bill.doaide.com/",
       "description": "Generate professional GST-compliant invoices and bills for free. No signup required. Perfect for Indian freelancers and small businesses.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Any",
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "INR"
       },
       "author": {
         "@type": "Organization",
@@ -42,7 +49,8 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- What crawlers that skip JavaScript see; createRoot replaces it on mount. -->
+    <div id="root"><main><h1>Free GST Invoice Generator for Indian Businesses</h1><p>Make GST-compliant invoices and bills with CGST, SGST and IGST calculated for you. Download a PDF or share on WhatsApp. Free, no signup.</p></main></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
